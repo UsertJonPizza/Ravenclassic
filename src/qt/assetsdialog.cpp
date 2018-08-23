@@ -10,7 +10,7 @@
 #include "addresstablemodel.h"
 #include "ravenunits.h"
 #include "clientmodel.h"
-#include "coincontroldialog.h"
+#include "assetcontroldialog.h"
 #include "guiutil.h"
 #include "optionsmodel.h"
 #include "platformstyle.h"
@@ -192,7 +192,7 @@ void AssetsDialog::setModel(WalletModel *_model)
 
         ui->frameCoinControl->setVisible(false);
         //TODO Turn on the coin control features for assets
-//        ui->frameCoinControl->setVisible(_model->getOptionsModel()->getCoinControlFeatures());
+        ui->frameCoinControl->setVisible(_model->getOptionsModel()->getCoinControlFeatures());
         coinControlUpdateLabels();
 
         // fee section
@@ -379,7 +379,7 @@ void AssetsDialog::on_sendButton_clicked()
     if (sendStatus.status == WalletModel::OK)
     {
         accept();
-        CoinControlDialog::coinControl->UnSelectAll();
+        AssetControlDialog::coinControl->UnSelectAll();
         coinControlUpdateLabels();
     }
     fNewRecipientAllowed = true;
@@ -750,7 +750,7 @@ void AssetsDialog::coinControlFeatureChanged(bool checked)
     ui->frameCoinControl->setVisible(checked);
 
     if (!checked && model) // coin control features disabled
-        CoinControlDialog::coinControl->SetNull();
+        AssetControlDialog::coinControl->SetNull();
 
     coinControlUpdateLabels();
 }
@@ -758,7 +758,7 @@ void AssetsDialog::coinControlFeatureChanged(bool checked)
 // Coin Control: button inputs -> show actual coin control dialog
 void AssetsDialog::coinControlButtonClicked()
 {
-    CoinControlDialog dlg(platformStyle);
+    AssetControlDialog dlg(platformStyle);
     dlg.setModel(model);
     dlg.exec();
     coinControlUpdateLabels();
@@ -769,7 +769,7 @@ void AssetsDialog::coinControlChangeChecked(int state)
 {
     if (state == Qt::Unchecked)
     {
-        CoinControlDialog::coinControl->destChange = CNoDestination();
+        AssetControlDialog::coinControl->destChange = CNoDestination();
         ui->labelCoinControlChangeLabel->clear();
     }
     else
@@ -785,7 +785,7 @@ void AssetsDialog::coinControlChangeEdited(const QString& text)
     if (model && model->getAddressTableModel())
     {
         // Default to no change address until verified
-        CoinControlDialog::coinControl->destChange = CNoDestination();
+        AssetControlDialog::coinControl->destChange = CNoDestination();
         ui->labelCoinControlChangeLabel->setStyleSheet("QLabel{color:red;}");
 
         const CTxDestination dest = DecodeDestination(text.toStdString());
@@ -808,7 +808,7 @@ void AssetsDialog::coinControlChangeEdited(const QString& text)
                                                                               QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
 
                 if(btnRetVal == QMessageBox::Yes)
-                    CoinControlDialog::coinControl->destChange = dest;
+                    AssetControlDialog::coinControl->destChange = dest;
                 else
                 {
                     ui->lineEditCoinControlChange->setText("");
@@ -827,7 +827,7 @@ void AssetsDialog::coinControlChangeEdited(const QString& text)
                 else
                     ui->labelCoinControlChangeLabel->setText(tr("(no label)"));
 
-                CoinControlDialog::coinControl->destChange = dest;
+                AssetControlDialog::coinControl->destChange = dest;
             }
         }
     }
@@ -839,11 +839,11 @@ void AssetsDialog::coinControlUpdateLabels()
     if (!model || !model->getOptionsModel())
         return;
 
-    updateCoinControlState(*CoinControlDialog::coinControl);
+    updateCoinControlState(*AssetControlDialog::coinControl);
 
     // set pay amounts
-    CoinControlDialog::payAmounts.clear();
-    CoinControlDialog::fSubtractFeeFromAmount = false;
+    AssetControlDialog::payAmounts.clear();
+    AssetControlDialog::fSubtractFeeFromAmount = false;
 
     for(int i = 0; i < ui->entries->count(); ++i)
     {
@@ -851,16 +851,16 @@ void AssetsDialog::coinControlUpdateLabels()
         if(entry && !entry->isHidden())
         {
             SendAssetsRecipient rcp = entry->getValue();
-            CoinControlDialog::payAmounts.append(rcp.amount);
+            AssetControlDialog::payAmounts.append(rcp.amount);
 //            if (rcp.fSubtractFeeFromAmount)
-//                CoinControlDialog::fSubtractFeeFromAmount = true;
+//                AssetControlDialog::fSubtractFeeFromAmount = true;
         }
     }
 
-    if (CoinControlDialog::coinControl->HasSelected())
+    if (AssetControlDialog::coinControl->HasSelected())
     {
         // actual coin control calculation
-        CoinControlDialog::updateLabels(model, this);
+        AssetControlDialog::updateLabels(model, this);
 
         // show coin control stats
         ui->labelCoinControlAutomaticallySelected->hide();
