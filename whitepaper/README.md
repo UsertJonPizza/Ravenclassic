@@ -28,7 +28,9 @@ MEME LEADERBOARD
 <h5>#3 - RAVENCLASSIC - 500 MEME POINTS - GETS RID OF THE "ASS"ET LAYER. ALSO IS A "CLASSIC" JOKE 
 </h5>
 Please note these values are subject to change as the MEME POINTS of cryptocurrencies change.
+
 ## 2. MEME POINTS
 MEME POINTS can be described as "The meme sauce of crypto." HOWEVER, that <i> doesn't </i> mean that making a sause related coin will increase your meme factor. To Increase your meme factor to the max you must come up with a memey name, minimum of 3 memey features, create memes on a regular basis, and have NO MASTERNODES. Meme points can only be awarded by a trusted member of the Ravenclassic community or a community approved by Ravenclassic. 
+
 ## 3. THE FUTURE OF RAVENCLASSIC
 Ravenclassic will continue to build up a strong community and increase our MEME POINTS. In memey-ness we trust. Amen. 
