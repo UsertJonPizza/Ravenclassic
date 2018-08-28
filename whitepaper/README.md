@@ -15,9 +15,15 @@ Thank you to the Bitcoin and Ravencoin founder and developers. The Ravenclassic 
 
 > **Abstract**. Ravenclassic is a meme cryptocurreny based of the Ravencoin codebase. We, the Ravenclassic team, saw an opertunity in meme cryptocurrenies based off the success of Dogecoin. Them memey-ness comes from the fact that Ravenclassic gets rid of the horrible "ASS"et layer created by Ravencoin. Also, Ravenclassic brings to the table the power of **NEVER**, unless absolutly nessicary, hardforking our codebase. 
 
-## 1. Introduction
-A MEME FACTOR is described as the power of how much memey-ness a coin has. The MEME FACTOR can be rated in the scale of 1-1,000 MEME POINTS. Ravenclassic aims to have a MEME FACTOR of at least 750 MEME POINTS. Sence this is the first-ever use of the MEME FACTOR, Ravenclassic has formulated a top ten list of cryptocurrencies as follows: 
+## 1. MEME FACTOR
+A MEME FACTOR is described as the power of how much memey-ness a coin has. The MEME FACTOR can be rated in the scale of 1-1,000 MEME POINTS. Ravenclassic aims to have a MEME FACTOR of at least 750 MEME POINTS. MEME POINTS are increased with a memey logo, memes created of the coin, and other small features of coins. Sence this is the first-ever use of the MEME FACTOR, Ravenclassic has formulated a top three list of the memeyest cryptocurrencies as follows: 
 
 <h3 align="center">
+MEME LEADERBOARD
+</h3>
+<h5>#1 - DOGECOIN - 700 MEME POINTS - CUZ ITZ A DOGE/>
+<h5>#2 - BITCONNECT - 690 MEME POINTS - WHEN BITCONNECT BOTTEM LEVEL PONZI SKAM PAY/>
+<h5>#3 - RAVENCLASSIC - 500 MEME POINTS - GETS RID OF THE "ASS"ET LAYER. ALSO IS A "CLASSIC" JOKE />
 
+Please note these values are subject to change as the MEME POINTS of cryptocurrencies change.
 ## 2. Background Tokens and Other Assets
